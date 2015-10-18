@@ -1,0 +1,5 @@
+*.swp
+rootfs/
+*.tar.xz
+stuff/
+upstream/

@@ -1,0 +1,6 @@
+Host alarm
+  Hostname alarm.local
+  CheckHostIP no
+  User toor
+  IdentityFile ~/.ssh/id_mkroot
+
