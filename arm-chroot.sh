@@ -37,7 +37,7 @@ DIR="${BASEDIR}/${SUBDIR}"
 
 if [[ -d stuff ]]
   then
-    mkdir "${DIR}/mnt/stuff"
+    mkdir -p "${DIR}/mnt/stuff"
     mount -o bind stuff/ "${DIR}/mnt/stuff"
 fi
 
@@ -62,9 +62,11 @@ mv etc/resolv.conf.bak etc/resolv.conf
 
 rm usr/bin/qemu-arm-static
 
+cd "$BASEDIR"
+
 if [[ -d stuff ]]
   then
-    umount mnt/stuff/
-    rmdir mnt/stuff/
+    umount "${DIR}/mnt/stuff"
+    rm -r "${DIR}/mnt/stuff"
 fi
 

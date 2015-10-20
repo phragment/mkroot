@@ -107,6 +107,7 @@ echo 'KEYMAP=de-latin1-nodeadkeys' > /etc/vconsole.conf
 groupadd -r -g 1000 toor
 useradd -r -u 1000 -m -g toor -G wheel,systemd-journal,power,users toor
 echo toor:toor | chpasswd
+chage -l toor
 
 # disable root account
 passwd -l root
